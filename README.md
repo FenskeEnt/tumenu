@@ -15,4 +15,4 @@ tags:
 
 ## 💁‍♀️ How to use
 
-- Click the link:
+- Click the link: https://tumenu-production.up.railway.app/
