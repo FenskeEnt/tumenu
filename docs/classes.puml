@@ -1,0 +1,49 @@
+@startuml
+
+class User {
+    - id: PK
+    - name: string
+    - email: string
+    - password: string
+    - admin: Boolean
+    - soft_deleted: Boolean
+}
+
+class Client {
+    - menu: Menu
+    - createMenu()
+}
+
+class Menu {
+    - id: PK
+    - name: string
+    - description: string
+    - soft_deleted: Boolean
+    - client: Client
+    - qr: string
+}
+
+class Category {
+    - id: PK
+    - name: string
+    - menu: MenuFK
+}
+
+class Item {
+    - id: PK
+    - name: string
+    - description: string
+    - price: float
+    - category: CategoryFK
+}
+
+Category --* Menu: tiene una lista de categorias
+Item --* Category: tiene una lista de items
+Client --* User
+
+Menu --|> Model
+User --|> Model
+Category --|> Model
+Item --|> Model
+
+@enduml

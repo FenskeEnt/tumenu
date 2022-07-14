@@ -1,0 +1,3 @@
+flask
+python-dotenv
+gunicorn==20.0.4
