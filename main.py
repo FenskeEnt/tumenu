@@ -1,4 +1,4 @@
-from root import create_app
+from root import create_app, db
 import os
 
 app = create_app()
@@ -16,4 +16,5 @@ def get():
     return {'users': users}
 
 if __name__ == '__main__':
+    db.create_all()
     app.run(debug=True, port=os.getenv("PORT", default=5000))
